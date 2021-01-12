@@ -17,7 +17,7 @@ import os
 
 
 def build_granted(fout):
-    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'],'.mylogin.cnf'), database='patent_20200630')
+    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'],'.mylogin.cnf'), database='patent_20201210')
     cursor = cnx.cursor()
     query = "SELECT uuid, patent_id, sequence FROM rawinventor;"
     cursor.execute(query)

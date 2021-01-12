@@ -23,9 +23,9 @@ logging.set_verbosity(logging.INFO)
 
 
 def create_tables():
-    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
-                                    database='patent_20200630')
-    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
+                                    database='patent_20201210')
+    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                      database='pregrant_publications')
 
     g_cursor = cnx_g.cursor()
@@ -53,9 +53,9 @@ def upload():
             elif splt[0] in granted_ids:
                 pairs_granted.append((splt[0], splt[1]))
 
-    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
-                                    database='patent_20200630')
-    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
+                                    database='patent_20201210')
+    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                      database='pregrant_publications')
 
     g_cursor = cnx_g.cursor()

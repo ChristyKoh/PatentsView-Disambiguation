@@ -17,7 +17,7 @@ def last_name(im):
 
 
 def build_pregrants():
-    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                   database='pregrant_publications')
     cursor = cnx.cursor()
     query = "select document_number,invention_title from application;"
@@ -33,8 +33,8 @@ def build_pregrants():
 
 
 def build_granted():
-    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
-                                  database='patent_20200630')
+    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
+                                  database='patent_20201210')
     cursor = cnx.cursor()
     query = "SELECT id,title FROM patent;"
     cursor.execute(query)

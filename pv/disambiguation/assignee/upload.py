@@ -20,9 +20,9 @@ logging.set_verbosity(logging.INFO)
 
 
 def create_tables():
-    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
-                                    database='patent_20200630')
-    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
+                                    database='patent_20201210')
+    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                      database='pregrant_publications')
 
     g_cursor = cnx_g.cursor()
@@ -36,9 +36,9 @@ def create_tables():
 
 
 def drop_tables():
-    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
-                                    database='patent_20200630')
-    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
+                                    database='patent_20201210')
+    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                      database='pregrant_publications')
 
     g_cursor = cnx_g.cursor()
@@ -50,9 +50,9 @@ def drop_tables():
 
 
 def create_uuid_map():
-    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
-                                    database='patent_20200630')
-    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
+                                    database='patent_20201210')
+    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                      database='pregrant_publications')
 
     g_cursor = cnx_g.cursor()
@@ -80,9 +80,9 @@ def upload(granted_ids, pregranted_ids):
             elif splt[0] in granted_ids:
                 pairs_granted.append((granted_ids[splt[0]], splt[1]))
 
-    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
-                                    database='patent_20200630')
-    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+    cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
+                                    database='patent_20201210')
+    cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                      database='pregrant_publications')
 
     g_cursor = cnx_g.cursor()

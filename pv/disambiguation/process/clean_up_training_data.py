@@ -35,10 +35,10 @@ def main(argv):
     eval_cc_out = '/iesl/canvas/nmonath/research/entity-resolution/er/data/inventor-train/eval_common_characteristics.train'
     eval_mixture_in = '/iesl/canvas/nmonath/research/entity-resolution/er/data/inventor-train/eval_mixture.txt.org'
     eval_mixture_out = '/iesl/canvas/nmonath/research/entity-resolution/er/data/inventor-train/eval_mixture.train'
-    eval_fns = ['/iesl/canvas/nmonath/research/entity-resolution/er/data/evaluation-data/inventor/2015_workshop/eval_als_common.txt',
-                '/iesl/canvas/nmonath/research/entity-resolution/er/data/evaluation-data/inventor/2015_workshop/eval_als.txt',
-                '/iesl/canvas/nmonath/research/entity-resolution/er/data/evaluation-data/inventor/2015_workshop/eval_ens.txt',
-                '/iesl/canvas/nmonath/research/entity-resolution/er/data/evaluation-data/inventor/2015_workshop/eval_is.txt',
+    eval_fns = ['/Users/koh46433/Christy/PatentsView-Disambiguation/data/eval_als_common.txt',
+                '/Users/koh46433/Christy/PatentsView-Disambiguation/data/eval_als.txt',
+                '/Users/koh46433/Christy/PatentsView-Disambiguation/data/eval_ens.txt',
+                '/Users/koh46433/Christy/PatentsView-Disambiguation/data/eval_is.txt',
                 '/iesl/canvas/nmonath/research/entity-resolution/er/data/evaluation-data/inventor/handlabeled/gold-labels.txt'
                 ]
     eval_ids = load_all_evaluation_ids(eval_fns)

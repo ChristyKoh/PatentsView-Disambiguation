@@ -11,9 +11,9 @@ class Loader(object):
     def __init__(self, pregranted_canopies, granted_canopies):
         self.pregranted_canopies = pregranted_canopies
         self.granted_canopies = granted_canopies
-        self.cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
-                                             database='patent_20200630')
-        self.cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+        self.cnx_g = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
+                                             database='patent_20201210')
+        self.cnx_pg = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                               database='pregrant_publications')
 
     def load(self, canopy):
@@ -60,7 +60,7 @@ def load_canopy(canopy_name, pregrant_ids, granted_ids, cnx_pg, cnx_g):
 
 def get_granted(ids, cnx, max_query_size=300000):
     # | uuid | patent_id | assignee_id | rawlocation_id | type | name_first | name_last | organization | sequence |
-    # cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'],'.mylogin.cnf'), database='patent_20200630')
+    # cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'],'.mylogin.cnf'), database='patent_20201210')
     cursor = cnx.cursor()
     feature_map = dict()
     for idx in range(0, len(ids), max_query_size):

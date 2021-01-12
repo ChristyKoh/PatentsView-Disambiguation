@@ -32,8 +32,8 @@ def build_granted(granted_uuids, pgranted_uuids):
     canopy2uuids = collections.defaultdict(list)
     uuid2canopy = dict()
     uuid2entityid = load_disambiguation(granted_uuids, pgranted_uuids)
-    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
-                                  database='patent_20200630')
+    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
+                                  database='patent_20201210')
     cursor = cnx.cursor()
     query = "SELECT uuid, rawlocation_id FROM rawassignee;"
     cursor.execute(query)
@@ -47,7 +47,7 @@ def build_pregrants(granted_uuids, pgranted_uuids):
     canopy2uuids = collections.defaultdict(list)
     uuid2canopy = dict()
     uuid2entityid = load_disambiguation(granted_uuids, pgranted_uuids)
-    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                   database='pregrant_publications')
     cursor = cnx.cursor()
     query = "SELECT id, rawlocation_id FROM rawassignee;"
@@ -61,7 +61,7 @@ def build_pregrants(granted_uuids, pgranted_uuids):
 def collection_location_mentions_granted():
     canopy2uuids = collections.defaultdict(list)
     uuid2entityid = load_disambiguation()
-    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.mylogin.cnf'),
+    cnx = mysql.connector.connect(option_files=os.path.join(os.environ['HOME'], '.cleartext-login.cnf'),
                                   database='pregrant_publications')
     cursor = cnx.cursor()
     query = "SELECT uuid, rawlocation_id FROM rawassignee;"

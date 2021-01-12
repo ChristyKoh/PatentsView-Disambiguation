@@ -12,7 +12,7 @@ from pv.disambiguation.util.qc_utils import get_dataframe_from_pymysql_cursor, g
 from pv.disambiguation.assignee.model import EntityKBFeatures
 from pv.disambiguation.assignee.names import normalize_name
 def main():
-    granted_db = pymysql.connect(read_default_file="~/.mylogin.cnf", database='patent_20200630')
+    granted_db = pymysql.connect(read_default_file="~/.mylogin.cnf", database='patent_20201210')
 
     old_disambig_data_query = """
     select count(1) as cluster_size, assignee_id
