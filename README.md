@@ -1,8 +1,10 @@
 # PatentsView-Disambiguation
 
 ## Setup
+Using Python 3.7, setup env.
 
 ```
+pip install wandb numpy absl-py scipy sklearn nltk 
 pip install git+git://github.com/iesl/grinch.git
 conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=9.2 -c pytorch
 ```
@@ -12,16 +14,16 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=9.2 -c pytorch
 ### Build Features
 
 ```
-python -m pv.disambiguation.inventor.build_assignee_features_sql.py
-python -m pv.disambiguation.inventor.build_coinventor_features_sql.py
-python -m pv.disambiguation.inventor.build_title_map_sql.py
+python -m pv.disambiguation.inventor.build_assignee_features_sql
+python -m pv.disambiguation.inventor.build_coinventor_features_sql
+python -m pv.disambiguation.inventor.build_title_map_sql
 ```
 
 ### Build Canopies
 
 ```
-python -m pv.disambiguation.inventor.build_canopies_sql.py --source granted
-python -m pv.disambiguation.inventor.build_canopies_sql.py --source pregranted
+python -m pv.disambiguation.inventor.build_canopies_sql --source granted
+python -m pv.disambiguation.inventor.build_canopies_sql --source pregranted
 ```
 
 ### Run clustering
@@ -75,10 +77,10 @@ python -m pv.disambiguation.assignee.finalize
 ### Build Mentions & Canopies
 
 ```
-python -m pv.disambiguation.location.build_assignee_location_canopies.py
-python -m pv.disambiguation.location.build_inventor_location_canopies.py
-python -m pv.disambiguation.location.build_assignee_location_mentions.py
-python -m pv.disambiguation.location.build_inventor_location_mentions.py
+python -m pv.disambiguation.location.build_assignee_location_canopies
+python -m pv.disambiguation.location.build_inventor_location_canopies
+python -m pv.disambiguation.location.build_assignee_location_mentions
+python -m pv.disambiguation.location.build_inventor_location_mentions
 ```
 
 ### Run clustering
